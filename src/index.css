@@ -14,3 +14,10 @@
   --color-text-light: #f3f4f6;   /* Soft light gray */
   --color-text-muted: #9ca3af;   /* Muted gray */
 }
+
+/* Base DOM Tag Styling Layout overrides */
+@layer base {
+  body {
+    @apply bg-bg-dark text-text-light overflow-x-hidden min-h-screen m-0 p-0;
+  }
+}
