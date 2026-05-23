@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  /* Main Backgrounds */
+  --color-bg-dark: #121212;      /* Deep matte black */
+  --color-bg-light: #f8fafc;     /* Bright off-white */
+
+  /* Brand / Accent Colors */
+  --color-brand-red: #991b1b;    /* Crimson/burgundy */
+  --color-accent-red: #dc2626;   /* Slightly brighter red */
+
+  /* Text Colors */
+  --color-text-dark: #1f2937;    /* Charcoal dark gray */
+  --color-text-light: #f3f4f6;   /* Soft light gray */
+  --color-text-muted: #9ca3af;   /* Muted gray */
+}
