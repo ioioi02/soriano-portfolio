@@ -24,9 +24,19 @@
     animation: marquee 20s linear infinite;
 }
 
-/* Base DOM Tag Styling Layout overrides */
 @layer base {
   body {
     @apply bg-bg-dark text-text-light overflow-x-hidden min-h-screen m-0 p-0;
   }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
 }

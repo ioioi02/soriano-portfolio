@@ -16,9 +16,54 @@ import css_logo from "../assets/css_logo.png";
 import mysql_logo from "../assets/mysql_logo.png";
 import python_logo from "../assets/python_logo.png";
 
+import ss1 from "../assets/ss1.png";
+import ss2 from "../assets/ss2.png";
+import ss3 from "../assets/ss3.png";
+import ss4 from "../assets/ss4.png";
+import ss5 from "../assets/ss5.png";
+import ss6 from "../assets/ss6.png";
+import ss7 from "../assets/ss7.png";
+import ss8 from "../assets/ss8.png";
+import ss9 from "../assets/ss9.png";
+import ss10 from "../assets/ss10.png";
+import ss11 from "../assets/ss11.png";
+import ss12 from "../assets/ss12.png";
+import ss14 from "../assets/ss14.png";
+import ss16 from "../assets/ss16.png";
+import ss17 from "../assets/ss17.png";
+import ss18 from "../assets/ss18.png";
+import ss19 from "../assets/ss19.png";
+import ss20 from "../assets/ss20.png";
+import ss21 from "../assets/ss21.png";
+import ss22 from "../assets/ss22.png";
+
+function useScrollReveal() {
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("reveal-visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.15 }
+        );
+
+        const elements = document.querySelectorAll(".reveal");
+        elements.forEach((el) => observer.observe(el));
+
+        return () => observer.disconnect();
+    }, []);
+}
+
 export default function LandingPage() {
+    useScrollReveal();
+
     const [showScrollTop, setShowScrollTop] = useState(false);
     const [selectedProject, setSelectedProject] = useState(null);
+    const [selectedImage, setSelectedImage] = useState(null);
 
     const projects = [
         {
@@ -28,7 +73,7 @@ export default function LandingPage() {
             description: "A web-based application designed for the PDM Health Services Office to improve clinic workflow and efficiency.", 
             fullDescription: "A web-based application designed for the PDM Health Services Office to improve clinic workflow and efficiency.", 
             tech: ["PHP (Laravel), Javascript, HTML, CSS, MySQL"], 
-            screenshots: [php_logo, laravel_logo, javascript_logo, html_logo, css_logo, mysql_logo, python_logo], 
+            screenshots: [ss1, ss2, ss3, ss4, ss5, ss6, ss7, ss8, ss9, ss10, ss11, ss12, ss14, ss16, ss17, ss18, ss19, ss20, ss21, ss22], 
             video: null, 
         }
     ];
@@ -122,13 +167,13 @@ export default function LandingPage() {
                     
                     {/* Left Side: Bold Typography Introduction */}
                     <div className="flex flex-col items-start text-left max-w-xl lg:self-center pb-0 lg:pb-16">
-                        <h1 className="text-5xl md:text-7xl font-black text-text-dark tracking-tight leading-none mb-2">
+                        <h1 className="text-5xl md:text-7xl font-black text-text-dark tracking-tight leading-none mb-2 reveal">
                             Hello,
                         </h1>
-                        <h1 className="text-5xl md:text-7xl font-black text-text-dark tracking-tight leading-none mb-4">
+                        <h1 className="text-5xl md:text-7xl font-black text-text-dark tracking-tight leading-none mb-4 reveal">
                             I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-accent-red">Jonas!</span>
                         </h1>
-                        <h2 className="text-xl md:text-4xl font-bold text-text-muted tracking-wide leading-none mb-2">
+                        <h2 className="text-xl md:text-4xl font-bold text-text-muted tracking-wide leading-none mb-2 reveal">
                             Aspiring Developer
                         </h2>
                     </div>
@@ -152,21 +197,21 @@ export default function LandingPage() {
 
                     <div className="max-w-3xl mx-auto flex flex-col items-center text-center relative z-10 xl:min-h-[calc(100vh-224px)] w-full">
                         <div className="flex flex-col items-center mb-10">
-                            <h1 className="text-4xl font-black tracking-tight mb-3">
+                            <h1 className="text-4xl font-black tracking-tight mb-3 reveal">
                                 ABOUT
                             </h1>
                             {/* Centered Small Red Accent Line */}
-                            <div className="w-12 h-1 bg-brand-red rounded-full"></div>
+                            <div className="w-12 h-1 bg-brand-red rounded-full reveal"></div>
                         </div>
 
                         <div className="space-y-6 text-text-muted font-medium text-base md:text-lg leading-relaxed max-w-2xl mt-auto xl:mb-auto">
-                            <p>
+                            <p className="reveal">
                                 I am a passionate <strong className="text-text-light font-bold">Aspiring Developer</strong> dedicated to solving problems 
                                 and delivering effective solutions. I am Fresh Graduate and for our thesis project, I developed a school clinic system 
                                 capable of Student Records Management, Symptom Reporting and Triage, 
                                 Medicine Inventory Tracking, and Health Analytics and Reporting.
                             </p>
-                            <p>
+                            <p className="reveal">
                                 I am capable of full-stack development, but I am focusing on the backend development. 
                                 I am eager to enter the professional industry to contribute to its growth 
                                 while continuously improving my skills and advancing my expertise.
@@ -220,14 +265,14 @@ export default function LandingPage() {
                     <div className="max-w-5xl mx-auto flex flex-col items-center">
                         {/* Centered Section Title */}
                         <div className="flex flex-col items-center text-center mb-16">
-                            <h1 className="text-4xl font-black tracking-tight mb-3">
+                            <h1 className="text-4xl font-black tracking-tight mb-3 reveal">
                                 PROJECTS
                             </h1>
-                            <div className="w-12 h-1 bg-brand-red rounded-full"></div>
+                            <div className="w-12 h-1 bg-brand-red rounded-full reveal"></div>
                         </div>
 
                         {/* Clickable Modern Project Display Layout */}
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full reveal">
                             {projects.map((project) => (
                                 <button 
                                     key={project.id} 
@@ -248,8 +293,10 @@ export default function LandingPage() {
                                             {project.title}
                                         </h2>
                                         
+                                        <hr className="border-t-2 border-accent-red opacity-50 my-2 mx-1" />
+
                                         {/* Project Short Description */}
-                                        <p className="text-text-muted font-medium text-xs mt-2 leading-relaxed">
+                                        <p className="text-text-muted font-medium text-xs leading-relaxed">
                                             {project.description}
                                         </p>
                                     </div>
@@ -323,13 +370,14 @@ export default function LandingPage() {
                                     )}
 
                                     {selectedProject.screenshots?.length > 0 && (
-                                        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-6">
+                                        <div className="grid grid-cols-2 md:grid-cols-2 gap-6 mb-6">
                                             {selectedProject.screenshots.map((ss, i) => (
-                                                <img
-                                                    key={i}
-                                                    src={ss}
-                                                    alt={`Screenshot ${i + 1}`}
-                                                    className="w-full h-28 rounded-xl object-cover cursor-pointer hover:opacity-80 transition-opacity duration-200"
+                                                <img 
+                                                    key={i} 
+                                                    src={ss} 
+                                                    alt={`Screenshot ${i + 1}`} 
+                                                    className="w-full h-28 rounded-xl object-cover cursor-pointer transition-all duration-300 transform hover:scale-130 hover:z-10 hover:shadow-2xl h-auto object-contain" 
+                                                    onClick={() => setSelectedImage(ss)}
                                                 />
                                             ))}
                                         </div>
@@ -342,6 +390,26 @@ export default function LandingPage() {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                )}
+
+                {selectedImage && (
+                    <div
+                        className="fixed inset-0 z-[60] flex items-center justify-center bg-black/90 backdrop-blur-sm px-4"
+                        onClick={() => setSelectedImage(null)}
+                    >
+                        <button
+                            className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-sm font-bold cursor-pointer"
+                            onClick={() => setSelectedImage(null)}
+                        >
+                            ✕
+                        </button>
+
+                        <img
+                            src={selectedImage}
+                            alt="Fullscreen Screenshot"
+                            className="max-w-full max-h-[90vh] rounded-2xl object-contain shadow-2xl"
+                        />
                     </div>
                 )}
             </main>
@@ -359,7 +427,7 @@ export default function LandingPage() {
             {showScrollTop && (
                 <button
                     onClick={() => scrollToSection("top")}
-                    className="fixed bottom-6 right-6 z-50 w-10 h-10 rounded-full bg-brand-red text-white flex items-center justify-center shadow-lg hover:bg-accent-red active:scale-95 transition-all duration-200 cursor-pointer"
+                    className="fixed bottom-6 right-6 z-49 w-10 h-10 rounded-full bg-brand-red text-white flex items-center justify-center shadow-lg hover:bg-accent-red active:scale-95 transition-all duration-200 cursor-pointer"
                     aria-label="Scroll to top"
                 >
                     ↑
