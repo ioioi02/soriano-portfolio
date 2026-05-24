@@ -99,13 +99,13 @@ export default function LandingPage() {
                     </button>
 
                     <div className="ml-5 flex items-center gap-2">
-                        <a href="#" target="_blank" rel="noreferrer" className="w-8 h-8 flex items-center justify-center rounded-md hover:bg-black/5 transition-all duration-200">
+                        <a href="sorianojonasryan.pdm@gmail.com" target="_blank" rel="noreferrer" className="w-8 h-8 flex items-center justify-center rounded-md hover:bg-black/5 transition-all duration-200">
                             <img src={gmail_logo} alt="Gmail" className="w-5 h-5 object-contain" />
                         </a>
-                        <a href="#" target="_blank" rel="noreferrer" className="w-8 h-8 flex items-center justify-center rounded-md hover:bg-black/5 transition-all duration-200">
+                        <a href="linkedin.com/in/jonas-ryan-soriano-878b23312" target="_blank" rel="noreferrer" className="w-8 h-8 flex items-center justify-center rounded-md hover:bg-black/5 transition-all duration-200">
                             <img src={linkedin_logo} alt="LinkedIn" className="w-5 h-5 object-contain" />
                         </a>
-                        <a href="#" target="_blank" rel="noreferrer" className="w-8 h-8 flex items-center justify-center rounded-md hover:bg-black/5 transition-all duration-200">
+                        <a href="github.com/ioioi02" target="_blank" rel="noreferrer" className="w-8 h-8 flex items-center justify-center rounded-md hover:bg-black/5 transition-all duration-200">
                             <img src={github_logo} alt="GitHub" className="w-5 h-5 object-contain" />
                         </a>
                     </div>
