@@ -18,6 +18,20 @@ import python_logo from "../assets/python_logo.png";
 
 export default function LandingPage() {
     const [showScrollTop, setShowScrollTop] = useState(false);
+    const [selectedProject, setSelectedProject] = useState(null);
+
+    const projects = [
+        {
+            id: 1, 
+            title: "School Clinic System (STEALTH)", 
+            tag: "Thesis", 
+            description: "A web-based application designed for the PDM Health Services Office to improve clinic workflow and efficiency.", 
+            fullDescription: "A web-based application designed for the PDM Health Services Office to improve clinic workflow and efficiency.", 
+            tech: ["PHP (Laravel), Javascript, HTML, CSS, MySQL"], 
+            screenshots: [php_logo, laravel_logo, javascript_logo, html_logo, css_logo, mysql_logo, python_logo], 
+            video: null, 
+        }
+    ];
 
     useEffect(() => {
         const handleScroll = () => {
@@ -26,6 +40,25 @@ export default function LandingPage() {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
+    useEffect(() => {
+        const handleKey = (e) => {
+            if (e.key === "Escape") setSelectedProject(null);
+        };
+        window.addEventListener("keydown", handleKey);
+        return () => window.removeEventListener("keydown", handleKey);
+    }, []);
+
+    useEffect(() => {
+        if (selectedProject) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "";
+        }
+        return () => {
+            document.body.style.overflow = "";
+        };
+    }, [selectedProject]);
 
     const scrollToSection = (id) => {
         if (id === "top") {
@@ -129,13 +162,14 @@ export default function LandingPage() {
                         <div className="space-y-6 text-text-muted font-medium text-base md:text-lg leading-relaxed max-w-2xl mt-auto xl:mb-auto">
                             <p>
                                 I am a passionate <strong className="text-text-light font-bold">Aspiring Developer</strong> dedicated to solving problems 
-                                and delivering effective solutions. For our thesis, I developed a school clinic system 
+                                and delivering effective solutions. I am Fresh Graduate and for our thesis project, I developed a school clinic system 
                                 capable of Student Records Management, Symptom Reporting and Triage, 
                                 Medicine Inventory Tracking, and Health Analytics and Reporting.
                             </p>
                             <p>
-                                While I am capable of full-stack development, I am more focused on the backend side. 
-                                Now, I am eager to enter the professional industry to improve my skills and contribute to the field.
+                                I am capable of full-stack development, but I am focusing on the backend development. 
+                                I am eager to enter the professional industry to contribute to its growth 
+                                while continuously improving my skills and advancing my expertise.
                             </p>
                         </div>
                     </div>
@@ -194,45 +228,122 @@ export default function LandingPage() {
 
                         {/* Clickable Modern Project Display Layout */}
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
-                            <a 
-                                href="#" 
-                                className="group bg-white border border-gray-200 hover:border-brand-red/30 rounded-2xl p-4 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between overflow-hidden relative cursor-pointer"
-                            >
-                                <div>
-                                    {/* Simulated Project Visual Code Preview Panel */}
-                                    <div className="w-full h-32 bg-bg-dark rounded-xl mb-4 p-3 font-mono text-[10px] text-text-muted/80 overflow-hidden flex flex-col gap-1 shadow-inner group-hover:text-text-light/90 transition-colors duration-300">
-                                        <p className="text-brand-red font-bold">import <span className="text-accent-red">ClinicSystem</span> from <span className="text-green-600">"./backend"</span>;</p>
-                                        <p className="text-text-muted">// Initializing core analytical thesis endpoints</p>
-                                        <p>const system = new ClinicSystem();</p>
-                                        <p>system.initializeRecordsManagement();</p>
-                                        <p>system.runSymptomReportingAndTriage();</p>
-                                        <p className="text-accent-red">system.trackMedicineInventory();</p>
+                            {projects.map((project) => (
+                                <button 
+                                    key={project.id} 
+                                    onClick={() => setSelectedProject(project)}
+                                    className="group bg-white border border-gray-200 hover:border-brand-red/30 rounded-2xl p-4 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between overflow-hidden relative cursor-pointer"
+                                >
+                                    <div>
+                                        <div className="w-full h-32 rounded-xl mb-4 overflow-hidden">
+                                            <img 
+                                                src={project.screenshots[0]} 
+                                                alt={project.title}
+                                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                            />
+                                        </div>
+                                        
+                                        {/* Project Title */}
+                                        <h2 className="text-lg font-bold text-text-dark group-hover:text-brand-red transition-colors duration-200">
+                                            {project.title}
+                                        </h2>
+                                        
+                                        {/* Project Short Description */}
+                                        <p className="text-text-muted font-medium text-xs mt-2 leading-relaxed">
+                                            {project.description}
+                                        </p>
                                     </div>
                                     
-                                    {/* Project Title */}
-                                    <h2 className="text-lg font-bold text-text-dark group-hover:text-brand-red transition-colors duration-200">
-                                        School Clinic System (STEALTH)
-                                    </h2>
-                                    
-                                    {/* Project Short Description */}
-                                    <p className="text-text-muted font-medium text-xs mt-2 leading-relaxed">
-                                        A web-based application designed for the PDM Health Services Office to improve clinic workflow and efficiency.
-                                    </p>
-                                </div>
-                                
-                                {/* Click Status Accent */}
-                                <div className="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between">
-                                    <span className="text-xs font-mono font-bold text-brand-red bg-brand-red/5 px-3 py-1 rounded-md">
-                                        Thesis
-                                    </span>
-                                    <span className="text-sm font-bold text-text-dark group-hover:text-accent-red flex items-center gap-1 transition-colors duration-200">
-                                        View Details <span className="transform group-hover:translate-x-1 transition-transform duration-200">→</span>
-                                    </span>
-                                </div>
-                            </a>
+                                    {/* Click Status Accent */}
+                                    <div className="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between">
+                                        <span className="text-xs font-mono font-bold text-brand-red bg-brand-red/5 px-3 py-1 rounded-md">
+                                            {project.tag}
+                                        </span>
+                                        <span className="text-sm font-bold text-text-dark group-hover:text-accent-red flex items-center gap-1 transition-colors duration-200">
+                                            View Details <span className="transform group-hover:translate-x-1 transition-transform duration-200">→</span>
+                                        </span>
+                                    </div>
+                                </button>
+                            ))}
                         </div>
                     </div>
                 </section>
+
+                {selectedProject && (
+                    <div
+                        className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm px-4"
+                        onClick={() => setSelectedProject(null)}
+                    >
+                        <div
+                            className="bg-white rounded-2xl max-w-lg w-full shadow-2xl relative max-h-[90vh] flex flex-col overflow-hidden"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            {/* Fixed Content */}
+                            <div className="px-8 pt-8 flex-shrink-0">
+                                <button
+                                    className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-sm font-bold cursor-pointer"
+                                    onClick={() => setSelectedProject(null)}
+                                >
+                                    ✕
+                                </button>
+
+                                <span className="text-xs font-mono font-bold text-brand-red bg-brand-red/5 px-3 py-1 rounded-md">
+                                    {selectedProject.tag}
+                                </span>
+
+                                <h2 className="text-2xl font-black text-text-dark mt-3 mb-2">
+                                    {selectedProject.title}
+                                </h2>
+
+                                <div className="flex gap-2 flex-wrap mb-6">
+                                    {selectedProject.tech.map((t) => (
+                                        <span key={t} className="text-xs bg-gray-100 text-gray-600 px-3 py-1 rounded-full font-mono">
+                                            {t}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Scrollable Content */}
+                            <div className="relative flex-1 overflow-hidden">
+                                <div className="overflow-y-auto max-h-[60vh] px-8 pb-16 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                                    <p className="text-text-muted text-sm leading-relaxed mb-4">
+                                        {selectedProject.fullDescription}
+                                    </p>
+
+                                    {selectedProject.video && (
+                                        <div className="w-full aspect-video rounded-xl overflow-hidden mb-4">
+                                            <iframe
+                                                src={selectedProject.video}
+                                                title="Project Video"
+                                                className="w-full h-full"
+                                                allowFullScreen
+                                            />
+                                        </div>
+                                    )}
+
+                                    {selectedProject.screenshots?.length > 0 && (
+                                        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-6">
+                                            {selectedProject.screenshots.map((ss, i) => (
+                                                <img
+                                                    key={i}
+                                                    src={ss}
+                                                    alt={`Screenshot ${i + 1}`}
+                                                    className="w-full h-28 rounded-xl object-cover cursor-pointer hover:opacity-80 transition-opacity duration-200"
+                                                />
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+
+                                {/* Fade + Scroll Indicator */}
+                                <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent pointer-events-none flex items-end justify-center pb-2">
+                                    <span className="text-xs text-gray-400 font-medium animate-bounce">↓ scroll</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )}
             </main>
 
             <footer className="w-full bg-bg-dark text-text-muted text-xs md:text-sm text-center py-8 px-6 border-t border-brand-red/10 mt-auto">
