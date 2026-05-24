@@ -212,9 +212,9 @@ export default function LandingPage() {
                                 Medicine Inventory Tracking, and Health Analytics and Reporting.
                             </p>
                             <p className="reveal">
-                                I am capable of full-stack development, but I am focusing on the backend development. 
-                                I am eager to enter the professional industry to contribute to its growth 
-                                while continuously improving my skills and advancing my expertise.
+                                I am capable of full stack development, and I am eager to expand my skills with a strong focus on backend development. 
+                                I am highly adaptable and have a strong drive to learn new technologies. I am eager to join a team where I can build 
+                                a secure, high-quality systems while growing alongside a collaborative team.
                             </p>
                         </div>
                     </div>
