@@ -8,6 +8,14 @@ import gmail_logo from "../assets/gmail_logo.png";
 import linkedin_logo from "../assets/linkedin_logo.png";
 import github_logo from "../assets/github_logo.png";
 
+import php_logo from "../assets/php_logo.png";
+import laravel_logo from "../assets/laravel_logo.png";
+import javascript_logo from "../assets/javascript_logo.png";
+import html_logo from "../assets/html_logo.png";
+import css_logo from "../assets/css_logo.png";
+import mysql_logo from "../assets/mysql_logo.png";
+import python_logo from "../assets/python_logo.png";
+
 export default function LandingPage() {
     const [showScrollTop, setShowScrollTop] = useState(false);
 
@@ -122,7 +130,7 @@ export default function LandingPage() {
                         {/* Centered Paragraph Content */}
                         <div className="space-y-6 text-text-muted font-medium text-base md:text-lg leading-relaxed max-w-2xl">
                             <p>
-                                I am a passionate <strong className="text-text-light font-bold">Software Developer</strong> dedicated to solving problems 
+                                I am a passionate <strong className="text-text-light font-bold">Aspiring Developer</strong> dedicated to solving problems 
                                 and delivering effective solutions. For our thesis, I developed a school clinic system 
                                 capable of Student Records Management, Symptom Reporting and Triage, 
                                 Medicine Inventory Tracking, and Health Analytics and Reporting.
@@ -131,6 +139,41 @@ export default function LandingPage() {
                                 While I am capable of full-stack development, I am more focused on the backend side. 
                                 Now, I am eager to enter the professional industry to improve my skills and contribute to the field.
                             </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section className="w-full bg-bg-dark py-8 px-6 overflow-hidden relative border-t border-white/5">
+                    <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-bg-dark to-transparent z-10 pointer-events-none"></div>
+                    <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-bg-dark to-transparent z-10 pointer-events-none"></div>
+
+                    <div className="flex w-full overflow-hidden items-center">
+                        <div className="flex gap-16 items-center shrink-0 min-w-full animate-marquee whitespace-nowrap pr-16">
+                            {[
+                                php_logo, laravel_logo, javascript_logo, html_logo, css_logo, mysql_logo, python_logo,
+                                php_logo, laravel_logo, javascript_logo, html_logo, css_logo, mysql_logo, python_logo
+                            ].map((logo, i) => (
+                                <img
+                                    key={`l1-${i}`}
+                                    src={logo}
+                                    alt="logo"
+                                    className="h-10 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0 cursor-pointer"
+                                />
+                            ))}
+                        </div>
+                        
+                        <div className="flex gap-16 items-center shrink-0 min-w-full animate-marquee whitespace-nowrap pr-16" aria-hidden="true">
+                            {[
+                                php_logo, laravel_logo, javascript_logo, html_logo, css_logo, mysql_logo, python_logo,
+                                php_logo, laravel_logo, javascript_logo, html_logo, css_logo, mysql_logo, python_logo
+                            ].map((logo, i) => (
+                                <img
+                                    key={`l2-${i}`}
+                                    src={logo}
+                                    alt="logo"
+                                    className="h-10 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0 cursor-pointer"
+                                />
+                            ))}
                         </div>
                     </div>
                 </section>
