@@ -80,7 +80,7 @@ export default function LandingPage() {
             </header>
 
             <main>
-                <section id="top" className="h-screen w-full bg-bg-light flex flex-col-reverse lg:flex-row items-center lg:items-end justify-center gap-20 px-6 md:px-16 lg:px-24 pt-28 max-w-7xl mx-auto overflow-hidden relative">                    
+                <section id="top" className="xl:h-screen w-full bg-bg-light flex flex-col lg:flex-row items-center lg:items-end justify-end lg:justify-center gap-8 lg:gap-20 px-6 md:px-16 lg:px-24 pt-28 max-w-7xl mx-auto overflow-hidden relative">                    
                     {/* Visual Accent Layer 1: Subtle tech grid pattern */}
                     <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:30px_30px] pointer-events-none"></div>
 
@@ -110,15 +110,14 @@ export default function LandingPage() {
                     </div>
                 </section>
 
-                <section id="about" className="relative min-h-screen w-full bg-bg-dark text-text-light px-6 md:px-16 lg:px-24 py-28 border-t border-white/5 overflow-hidden">
+                <section id="about" className="relative xl:min-h-screen w-full bg-bg-dark text-text-light px-6 md:px-16 lg:px-24 py-28 border-t border-white/5 overflow-hidden">
                     {/* Visual Accent Layer 1: Subtle tech dot matrix field */}
                     <div className="absolute inset-0 opacity-[0.15] bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
 
                     {/* Visual Accent Layer 2: Deep red glowing ambient aura sitting low on the canvas */}
                     <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-brand-red/10 rounded-full blur-[120px] pointer-events-none"></div>
 
-                    <div className="max-w-3xl mx-auto flex flex-col items-center text-center relative z-10">
-                        {/* Centered Section Title */}
+                    <div className="max-w-3xl mx-auto flex flex-col items-center text-center relative z-10 xl:min-h-[calc(100vh-224px)] w-full">
                         <div className="flex flex-col items-center mb-10">
                             <h1 className="text-4xl font-black tracking-tight mb-3">
                                 ABOUT
@@ -127,8 +126,7 @@ export default function LandingPage() {
                             <div className="w-12 h-1 bg-brand-red rounded-full"></div>
                         </div>
 
-                        {/* Centered Paragraph Content */}
-                        <div className="space-y-6 text-text-muted font-medium text-base md:text-lg leading-relaxed max-w-2xl">
+                        <div className="space-y-6 text-text-muted font-medium text-base md:text-lg leading-relaxed max-w-2xl mt-auto xl:mb-auto">
                             <p>
                                 I am a passionate <strong className="text-text-light font-bold">Aspiring Developer</strong> dedicated to solving problems 
                                 and delivering effective solutions. For our thesis, I developed a school clinic system 
@@ -178,7 +176,7 @@ export default function LandingPage() {
                     </div>
                 </section>
 
-                <section id="project" className="min-h-screen w-full bg-bg-light text-text-dark px-6 md:px-16 lg:px-24 py-28 border-t border-gray-200/40 relative">
+                <section id="project" className="relative xl:min-h-screen w-full bg-bg-light text-text-dark px-6 md:px-16 lg:px-24 py-28 border-t border-gray-200/40">
                     {/* Visual Accent Layer 1: Subtle tech grid pattern */}
                     <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:30px_30px] pointer-events-none"></div>
 
