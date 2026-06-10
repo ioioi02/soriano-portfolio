@@ -14,7 +14,35 @@ import javascript_logo from "../assets/javascript_logo.png";
 import html_logo from "../assets/html_logo.png";
 import css_logo from "../assets/css_logo.png";
 import mysql_logo from "../assets/mysql_logo.png";
+import csharp_logo from "../assets/c-sharp_logo.png";
 import python_logo from "../assets/python_logo.png";
+
+import ars1 from "../assets/ars1.png";
+import ars2 from "../assets/ars2.png";
+import ars3 from "../assets/ars3.png";
+import ars4 from "../assets/ars4.png";
+import ars5 from "../assets/ars5.png";
+import ars6 from "../assets/ars6.png";
+import ars7 from "../assets/ars7.png";
+import ars8 from "../assets/ars8.png";
+import ars9 from "../assets/ars9.png";
+import ars10 from "../assets/ars10.png";
+import ars11 from "../assets/ars11.png";
+import ars12 from "../assets/ars12.png";
+import ars13 from "../assets/ars13.png";
+import ars14 from "../assets/ars14.png";
+import ars15 from "../assets/ars15.png";
+import ars16 from "../assets/ars16.png";
+import ars17 from "../assets/ars17.png";
+import ars18 from "../assets/ars18.png";
+import ars19 from "../assets/ars19.png";
+import ars20 from "../assets/ars20.png";
+import ars21 from "../assets/ars21.png";
+import ars22 from "../assets/ars22.png";
+import ars23 from "../assets/ars23.png";
+import ars24 from "../assets/ars24.png";
+import ars25 from "../assets/ars25.png";
+import ars26 from "../assets/ars26.png";
 
 import ss1 from "../assets/ss1.png";
 import ss2 from "../assets/ss2.png";
@@ -68,13 +96,25 @@ export default function LandingPage() {
     const projects = [
         {
             id: 1, 
+            title: "Customer Service Application (Prototype)", 
+            tag: "Internship", 
+            description: "A desktop application designed for Racitelcom Inc. to improve customer subscription onboarding and ticketing system.", 
+            fullDescription: "A desktop application designed for Racitelcom Inc. to improve customer subscription onboarding and the ticketing system.", 
+            tech: ["C# (WinForms), .Net, MySQL, TCP/IP Networking"], 
+            screenshots: [ars1, ars2, ars3, ars4, ars5, ars6, ars7, ars10, ars8, ars9, ars11, ars12, ars13, ars14, ars15, ars16, ars17, ars18, ars19, ars20, ars21, ars22, ars23, ars24, ars25, ars26], 
+            video: null, 
+            date: "June 2024 – July 2024", 
+        }, 
+        {
+            id: 2, 
             title: "School Clinic System (STEALTH)", 
             tag: "Thesis", 
             description: "A web-based application designed for the PDM Health Services Office to improve clinic workflow and efficiency.", 
             fullDescription: "A web-based application designed for the PDM Health Services Office to improve clinic workflow and efficiency.", 
             tech: ["PHP (Laravel), Javascript, HTML, CSS, MySQL"], 
-            screenshots: [ss1, ss2, ss3, ss4, ss5, ss6, ss7, ss8, ss9, ss10, ss11, ss12, ss14, ss16, ss17, ss18, ss19, ss20, ss21, ss22], 
+            screenshots: [ss1, ss2, ss3, ss4, ss5, ss20, ss6, ss7, ss8, ss9, ss10, ss11, ss12, ss21, ss22, ss14, ss16, ss17, ss18, ss19], 
             video: null, 
+            date: "September 2025 – May 2026", 
         }
     ];
 
@@ -183,7 +223,7 @@ export default function LandingPage() {
                         <img 
                             src={my_photo} 
                             alt="My Photo" 
-                            className="w-72 md:w-96 h-auto object-contain object-bottom transition-transform duration-500 ease-in-out"
+                            className="w-72 md:w-96 h-auto object-contain object-bottom transition-transform duration-500 ease-in-out z-1"
                         />
                     </div>
                 </section>
@@ -227,8 +267,8 @@ export default function LandingPage() {
                     <div className="flex w-full overflow-hidden items-center">
                         <div className="flex gap-16 items-center shrink-0 min-w-full animate-marquee whitespace-nowrap pr-16">
                             {[
-                                php_logo, laravel_logo, javascript_logo, html_logo, css_logo, mysql_logo, python_logo,
-                                php_logo, laravel_logo, javascript_logo, html_logo, css_logo, mysql_logo, python_logo
+                                php_logo, laravel_logo, javascript_logo, html_logo, css_logo, mysql_logo, csharp_logo, python_logo,
+                                php_logo, laravel_logo, javascript_logo, html_logo, css_logo, mysql_logo, csharp_logo, python_logo
                             ].map((logo, i) => (
                                 <img
                                     key={`l1-${i}`}
@@ -241,8 +281,8 @@ export default function LandingPage() {
                         
                         <div className="flex gap-16 items-center shrink-0 min-w-full animate-marquee whitespace-nowrap pr-16" aria-hidden="true">
                             {[
-                                php_logo, laravel_logo, javascript_logo, html_logo, css_logo, mysql_logo, python_logo,
-                                php_logo, laravel_logo, javascript_logo, html_logo, css_logo, mysql_logo, python_logo
+                                php_logo, laravel_logo, javascript_logo, html_logo, css_logo, mysql_logo, csharp_logo, python_logo,
+                                php_logo, laravel_logo, javascript_logo, html_logo, css_logo, mysql_logo, csharp_logo, python_logo
                             ].map((logo, i) => (
                                 <img
                                     key={`l2-${i}`}
@@ -338,6 +378,10 @@ export default function LandingPage() {
                                     {selectedProject.tag}
                                 </span>
 
+                                <span className="text-xs font-mono text-gray-400 ml-3">
+                                    {selectedProject.date || ""}
+                                </span>
+                                
                                 <h2 className="text-2xl font-black text-text-dark mt-3 mb-2">
                                     {selectedProject.title}
                                 </h2>
