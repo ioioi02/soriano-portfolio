@@ -3,5 +3,5 @@
 </p>
 
 <p align="center">
-    My first developer portfolio created using react and tailwindcss as part of my journey to explore other languages.
+    Developed using react and tailwindcss.
 </p>
